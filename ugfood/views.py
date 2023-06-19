@@ -17,6 +17,8 @@ from .serializer import FoodSerializer
 @api_view(['GET'])
 def ListAllFood(request):
     allFood = Food.objects.all()
+    # setting serializer variable to FoodSerializer class pass in allfood variable and 
+    # (many => True)return all fields
     serializer = FoodSerializer(allFood, many = True)
     # return a serialized representation of the food item as the response body. This serialized 
     # representation is obtained from the (serializer.data) attribute, which returns a dictionary of the serialized data.
@@ -34,7 +36,9 @@ def ViewFood(request, pk):
 #  RESTAPI Function for creating new food
 @api_view(['POST'])
 def CreateFood(request):
+    # serializer variable gets data from FoodSerializer class and the pass data from the UI
     serializer = FoodSerializer(data=request.data)
+    # Checking if the data sent is valid be4 saving the data
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
