@@ -28,4 +28,5 @@ It has models, views, and URLs, and all are well explained in detail.
 ## Screen Shot with Swagger API
 ![image](https://github.com/Kitemaggwa-Shafic/Django_REST_API/assets/54108967/6c0318c9-bafc-42b1-84a2-1afff846ec51)
 
- 
+## Sample link
+This is the visit demo of the REST API of the above project https://kitemaggwa-shafic.github.io/Django_REST_API/swagger
