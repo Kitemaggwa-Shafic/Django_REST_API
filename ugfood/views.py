@@ -10,6 +10,8 @@ from rest_framework.decorators import api_view
 from .models import Food
 from .serializer import FoodSerializer
 
+# Import for swagger auto schema for fields
+from drf_yasg.utils import swagger_auto_schema
 
 # Create your views here.
 
@@ -34,6 +36,8 @@ def ViewFood(request, pk):
 
 
 #  RESTAPI Function for creating new food
+# swagger declaration to use the fields of schema
+@swagger_auto_schema(method='post', request_body=FoodSerializer)
 @api_view(['POST'])
 def CreateFood(request):
     # serializer variable gets data from FoodSerializer class and the pass data from the UI
@@ -45,6 +49,8 @@ def CreateFood(request):
 
 
 # RESTAPI Function for Updating new food
+# swagger declaration to use the fields of schema
+@swagger_auto_schema(method='post', request_body=FoodSerializer)
 @api_view(['POST'])
 def UpdateFood(request, pk):
     # This method retrieves a single instance of the Food model with the given primary key pk.
@@ -60,8 +66,14 @@ def UpdateFood(request, pk):
     return Response(serializer.data)
 
 
-@api_view(['GET'])
+@api_view(['DELETE'])
 def DeleteFood(request, pk):
     deletefood = Food.objects.get(id=pk)
     deletefood.delete()
     return Response("Food deleted successfuly !!")
+
+
+# Index view
+
+def index(request):
+    return render(request,"index.html")
