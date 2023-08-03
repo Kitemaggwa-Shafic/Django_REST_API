@@ -33,7 +33,7 @@ urlpatterns = [
 schema_view = get_schema_view(
     openapi.Info(
         title="MY DJANGO FOOD API WITH SWAGGER",
-        default_version='v1',
+        default_version='v1.1',
         description="TEsting Food API and Swagger",
         terms_of_service="https://your-terms-of-service-url.com/",
         contact=openapi.Contact(email="kitemaggwashafic@gmail.com"),

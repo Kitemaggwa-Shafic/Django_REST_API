@@ -50,8 +50,8 @@ def CreateFood(request):
 
 # RESTAPI Function for Updating new food
 # swagger declaration to use the fields of schema
-@swagger_auto_schema(method='post', request_body=FoodSerializer)
-@api_view(['POST'])
+@swagger_auto_schema(method='put', request_body=FoodSerializer)
+@api_view(['PUT'])
 def UpdateFood(request, pk):
     # This method retrieves a single instance of the Food model with the given primary key pk.
     food = Food.objects.get(id=pk)
