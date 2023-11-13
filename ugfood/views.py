@@ -35,8 +35,8 @@ def ViewFood(request, pk):
     return Response(serializer.data)
 
 
-#  RESTAPI Function for creating new food
-# swagger declaration to use the fields of schema
+# RESTAPI Function for creating new food
+# Swagger declaration to use the fields of schema
 @swagger_auto_schema(method='post', request_body=FoodSerializer)
 @api_view(['POST'])
 def CreateFood(request):
