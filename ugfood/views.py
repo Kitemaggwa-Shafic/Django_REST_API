@@ -65,7 +65,7 @@ def UpdateFood(request, pk):
 
     return Response(serializer.data)
 
-
+# Delete method for 
 @api_view(['DELETE'])
 def DeleteFood(request, pk):
     deletefood = Food.objects.get(id=pk)
